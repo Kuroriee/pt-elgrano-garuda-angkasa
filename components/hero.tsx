@@ -4,7 +4,6 @@ import { useLanguage, translations as t } from "@/lib/i18n"
 
 export function Hero() {
   const { lang } = useLanguage()
-
   return (
     <section id="top" className="grid min-h-screen grid-cols-1 pt-20 md:grid-cols-2">
       <div className="relative flex flex-col justify-center overflow-hidden bg-mint px-6 py-20 md:px-12 lg:px-16">
