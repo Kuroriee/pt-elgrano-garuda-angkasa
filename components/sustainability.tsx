@@ -33,7 +33,7 @@ export function Sustainability() {
         </div>
         <div
           className="relative h-[480px] rounded-sm bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/sustainability.png')" }}
+          style={{ backgroundImage: "url('/pt-elgrano-garuda-angkasa/images/sustainability.png')" }}
           role="img"
           aria-label="Terraced coffee plantation on Sumatra's volcanic highland slopes"
         >

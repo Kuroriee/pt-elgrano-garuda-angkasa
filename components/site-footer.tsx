@@ -8,7 +8,7 @@ export function SiteFooter() {
     <footer className="flex flex-col items-center justify-between gap-4 border-t border-amber/20 bg-espresso px-6 py-8 md:flex-row md:px-12">
       <div className="flex items-center gap-3">
         <img
-          src="/images/ega-logo.png"
+          src="/pt-elgrano-garuda-angkasa/images/ega-logo.png"
           alt="Stempel resmi PT Elgrano Garuda Angkasa, Medan"
           className="h-12 w-12 shrink-0 rounded-full bg-cream object-contain p-0.5"
         />

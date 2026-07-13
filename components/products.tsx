@@ -4,10 +4,10 @@ import { useRef, useState } from "react"
 import { useLanguage, translations as t } from "@/lib/i18n"
 
 const images = [
-  "/images/product-aceh.png",
-  "/images/product-mandheling.png",
-  "/images/product-lintong.png",
-  "/images/product-robusta.png",
+  "/pt-elgrano-garuda-angkasa/images/product-aceh.png",
+  "/pt-elgrano-garuda-angkasa/images/product-mandheling.png",
+  "/pt-elgrano-garuda-angkasa/images/product-lintong.png",
+  "/pt-elgrano-garuda-angkasa/images/product-robusta.png",
 ]
 
 export function Products() {

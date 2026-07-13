@@ -17,7 +17,7 @@ export function SiteNav() {
     <nav className="fixed inset-x-0 top-0 z-50 flex items-center justify-between border-b border-amber/20 bg-cream/85 px-6 py-4 backdrop-blur-md md:px-12">
       <a href="#top" className="flex items-center gap-2.5">
         <img
-          src="/images/ega-mark.png"
+          src="/pt-elgrano-garuda-angkasa/images/ega-mark.png"
           alt="Lambang garuda PT Elgrano Garuda Angkasa"
           className="h-8 w-8 shrink-0 object-contain"
         />
