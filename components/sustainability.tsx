@@ -1,6 +1,7 @@
 "use client"
 
 import { useLanguage, translations as t } from "@/lib/i18n"
+import { basePath } from "@/lib/base-path"
 
 export function Sustainability() {
   const { lang } = useLanguage()
@@ -33,7 +34,7 @@ export function Sustainability() {
         </div>
         <div
           className="relative h-[480px] rounded-sm bg-cover bg-center"
-          style={{ backgroundImage: "url('/pt-elgrano-garuda-angkasa/images/sustainability.png')" }}
+          style={{ backgroundImage: `url(${basePath}/images/sustainability.png)` }}
           role="img"
           aria-label="Terraced coffee plantation on Sumatra's volcanic highland slopes"
         >

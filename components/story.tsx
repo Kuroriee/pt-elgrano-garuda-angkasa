@@ -1,6 +1,7 @@
 "use client"
 
 import { useLanguage, translations as t } from "@/lib/i18n"
+import { basePath } from "@/lib/base-path"
 
 export function Story() {
   const { lang } = useLanguage()
@@ -23,7 +24,7 @@ export function Story() {
         </div>
         <div className="mt-8 flex items-center gap-4 border-t border-coffee/15 pt-6">
           <img
-            src="/pt-elgrano-garuda-angkasa/images/ega-logo.png"
+            src={`${basePath}/images/ega-logo.png`}
             alt="Stempel resmi PT Elgrano Garuda Angkasa — Medan"
             className="h-20 w-20 shrink-0 object-contain opacity-80"
           />
@@ -37,13 +38,13 @@ export function Story() {
       <div className="grid h-[460px] grid-rows-2 gap-4">
         <div
           className="rounded-sm bg-cover bg-center"
-          style={{ backgroundImage: "url('/pt-elgrano-garuda-angkasa/images/story-cherries.png')" }}
+          style={{ backgroundImage: `url(${basePath}/images/story-cherries.png)` }}
           role="img"
           aria-label="Ripe red coffee cherries on the branch in the Sumatran highlands"
         />
         <div
           className="rounded-sm bg-cover bg-center"
-          style={{ backgroundImage: "url('/pt-elgrano-garuda-angkasa/images/story-hands.png')" }}
+          style={{ backgroundImage: `url(${basePath}/images/story-hands.png)` }}
           role="img"
           aria-label="A farmer's hands holding freshly picked green coffee beans"
         />

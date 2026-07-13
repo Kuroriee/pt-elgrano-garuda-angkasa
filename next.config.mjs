@@ -1,11 +1,16 @@
 /** @type {import('next').NextConfig} */
+const target = process.env.DEPLOY_TARGET // 'github-pages' | 'static' | undefined
+const isGithubPages = target === 'github-pages'
+const isStaticExport = target === 'github-pages' || target === 'static'
+
 const nextConfig = {
-  output: 'export',
-  // GANTI '/pt-elgrano-garuda-angkasa' dengan nama repo GitHub kamu yang sebenarnya.
-  // Kalau nama repo-nya PERSIS "username.github.io", hapus baris basePath ini.
-  basePath: '/pt-elgrano-garuda-angkasa',
+  output: isStaticExport ? 'export' : undefined,
+  basePath: isGithubPages ? '/pt-elgrano-garuda-angkasa' : '',
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isGithubPages ? '/pt-elgrano-garuda-angkasa' : '',
+  },
   images: {
-    unoptimized: true,
+    unoptimized: isStaticExport ? true : false,
   },
 }
 

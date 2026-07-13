@@ -2,12 +2,13 @@
 
 import { useRef, useState } from "react"
 import { useLanguage, translations as t } from "@/lib/i18n"
+import { basePath } from "@/lib/base-path"
 
 const images = [
-  "/pt-elgrano-garuda-angkasa/images/product-aceh.png",
-  "/pt-elgrano-garuda-angkasa/images/product-mandheling.png",
-  "/pt-elgrano-garuda-angkasa/images/product-lintong.png",
-  "/pt-elgrano-garuda-angkasa/images/product-robusta.png",
+ { src: `${basePath}/images/product-aceh.png` },
+ { src: `${basePath}/images/product-mandheling.png` },
+ { src: `${basePath}/images/product-lintong.png` },
+ { src: `${basePath}/images/product-robusta.png` },
 ]
 
 export function Products() {

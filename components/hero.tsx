@@ -1,6 +1,7 @@
 "use client"
 
 import { useLanguage, translations as t } from "@/lib/i18n"
+import { basePath } from "@/lib/base-path"
 
 export function Hero() {
   const { lang } = useLanguage()
@@ -31,8 +32,7 @@ export function Hero() {
       <div
         className="relative min-h-[50vh] bg-cover bg-center md:min-h-0"
         style={{
-          backgroundImage:
-            "linear-gradient(180deg, rgba(58,42,28,0.1) 0%, rgba(58,42,28,0.05) 40%, rgba(58,42,28,0.35) 100%), url('/pt-elgrano-garuda-angkasa/images/hero-coffee.png')",
+          backgroundImage: `linear-gradient(180deg, rgba(58,42,28,0.1) 0%, rgba(58,42,28,0.35) 100%), url(${basePath}/images/hero-coffee.png)`,
         }}
       >
         <div className="absolute inset-x-6 bottom-12 border-l-2 border-amber bg-cream/90 px-6 py-5 backdrop-blur-sm md:inset-x-8">
