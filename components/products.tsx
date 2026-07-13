@@ -51,7 +51,7 @@ export function Products() {
               <div className="relative h-44 overflow-hidden">
                 <div
                   className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                  style={{ backgroundImage: `url('${images[i]}')` }}
+                  style={{ backgroundImage: `url('${images[i].src}')` }}
                   role="img"
                   aria-label={`${product.name} coffee beans`}
                 />
