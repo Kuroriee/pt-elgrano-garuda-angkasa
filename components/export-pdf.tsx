@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { useLanguage, translations as t } from "@/lib/i18n"
 
 // Brand palette (matches the site theme)
@@ -25,6 +25,9 @@ const ui = {
   docTitle: { id: "Profil Perusahaan", en: "Company Profile" },
   storyTitle: { id: "Kisah Kami", en: "Our Story" },
   page: { id: "Halaman", en: "Page" },
+  choose: { id: "Pilih bahasa PDF", en: "Choose PDF language" },
+  langId: { id: "Bahasa Indonesia", en: "Indonesian" },
+  langEn: { id: "English", en: "English" },
 }
 
 // Build the PDF document. react-pdf primitives are imported dynamically at call time.
@@ -379,20 +382,35 @@ async function buildDocument(lang: Lang) {
 
 export function ExportPdfButton({ className }: { className?: string }) {
   const { lang } = useLanguage()
-  const [busy, setBusy] = useState(false)
+  const [busy, setBusy] = useState<Lang | null>(null)
+  const [open, setOpen] = useState(false)
+  const wrapRef = useRef<HTMLDivElement>(null)
 
-  async function handleDownload() {
+  // Close the language menu when clicking outside of it
+  useEffect(() => {
+    if (!open) return
+    function handleClickOutside(e: MouseEvent) {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) {
+        setOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [open])
+
+  async function handleDownload(target: Lang) {
+    setOpen(false)
     if (busy) return
-    setBusy(true)
+    setBusy(target)
     try {
       const { pdf } = await import("@react-pdf/renderer")
-      const doc = await buildDocument(lang)
+      const doc = await buildDocument(target)
       const blob = await pdf(doc).toBlob()
       const url = URL.createObjectURL(blob)
       const a = document.createElement("a")
       a.href = url
       a.download =
-        lang === "id" ? "PT-Elgrano-Garuda-Angkasa-Profil-Perusahaan.pdf" : "PT-Elgrano-Garuda-Angkasa-Company-Profile.pdf"
+        target === "id" ? "PT-Elgrano-Garuda-Angkasa-Profil-Perusahaan.pdf" : "PT-Elgrano-Garuda-Angkasa-Company-Profile.pdf"
       document.body.appendChild(a)
       a.click()
       document.body.removeChild(a)
@@ -400,24 +418,55 @@ export function ExportPdfButton({ className }: { className?: string }) {
     } catch (err) {
       console.log("[v0] PDF generation error:", err)
     } finally {
-      setBusy(false)
+      setBusy(null)
     }
   }
 
   return (
-    <button
-      type="button"
-      onClick={handleDownload}
-      disabled={busy}
-      aria-label={ui.download[lang]}
-      className={
-        className ??
-        "inline-flex items-center gap-2 border border-amber bg-amber px-4 py-2 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-cream transition-colors hover:bg-transparent hover:text-amber disabled:opacity-60"
-      }
-    >
-      <DownloadIcon />
-      {busy ? ui.generating[lang] : ui.download[lang]}
-    </button>
+    <div className="relative" ref={wrapRef}>
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        disabled={busy !== null}
+        aria-haspopup="true"
+        aria-expanded={open}
+        aria-label={ui.download[lang]}
+        className={
+          className ??
+          "inline-flex items-center gap-2 border border-amber bg-amber px-4 py-2 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-cream transition-colors hover:bg-transparent hover:text-amber disabled:opacity-60"
+        }
+      >
+        <DownloadIcon />
+        {busy ? ui.generating[busy] : ui.download[lang]}
+      </button>
+
+      {open && (
+        <div
+          role="menu"
+          className="absolute right-0 top-full z-50 mt-1.5 min-w-[190px] overflow-hidden rounded-sm border border-amber/30 bg-cream shadow-lg"
+        >
+          <p className="border-b border-amber/15 px-4 py-2 font-mono text-[0.6rem] uppercase tracking-[0.1em] text-coffee/70">
+            {ui.choose[lang]}
+          </p>
+          <button
+            type="button"
+            role="menuitem"
+            onClick={() => handleDownload("id")}
+            className="block w-full px-4 py-2.5 text-left font-mono text-[0.68rem] uppercase tracking-[0.08em] text-espresso transition-colors hover:bg-amber/10"
+          >
+            🇮🇩 {ui.langId[lang]}
+          </button>
+          <button
+            type="button"
+            role="menuitem"
+            onClick={() => handleDownload("en")}
+            className="block w-full px-4 py-2.5 text-left font-mono text-[0.68rem] uppercase tracking-[0.08em] text-espresso transition-colors hover:bg-amber/10"
+          >
+            🇬🇧 {ui.langEn[lang]}
+          </button>
+        </div>
+      )}
+    </div>
   )
 }
 
