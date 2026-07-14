@@ -4,15 +4,37 @@ import type React from "react"
 import { useState } from "react"
 import { useLanguage, translations as t } from "@/lib/i18n"
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xbdnjvww"
+
 export function Contact() {
   const { lang } = useLanguage()
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle")
   const f = t.contact.fields
   const details = t.contact.details[lang]
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setSubmitted(true)
+    setStatus("sending")
+
+    const form = e.currentTarget
+    const data = new FormData(form)
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      })
+
+      if (response.ok) {
+        setStatus("success")
+        form.reset()
+      } else {
+        setStatus("error")
+      }
+    } catch {
+      setStatus("error")
+    }
   }
 
   return (
@@ -37,7 +59,7 @@ export function Contact() {
         </div>
 
         <div>
-          {submitted ? (
+          {status === "success" ? (
             <div className="flex h-full min-h-64 flex-col items-start justify-center border border-amber/30 bg-cream p-8">
               <p className="mb-2 font-heading text-2xl text-amber">{t.contact.successTitle[lang]}</p>
               <p className="text-sm leading-relaxed text-coffee/80">{t.contact.successBody[lang]}</p>
@@ -46,23 +68,23 @@ export function Contact() {
             <form onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <Field label={f.company[lang]}>
-                  <input required type="text" className={inputClass} placeholder={f.companyPh[lang]} />
+                  <input required name="perusahaan" type="text" className={inputClass} placeholder={f.companyPh[lang]} />
                 </Field>
                 <Field label={f.name[lang]}>
-                  <input required type="text" className={inputClass} placeholder={f.namePh[lang]} />
+                  <input required name="nama_kontak" type="text" className={inputClass} placeholder={f.namePh[lang]} />
                 </Field>
               </div>
               <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <Field label={f.email[lang]}>
-                  <input required type="email" className={inputClass} placeholder={f.emailPh[lang]} />
+                  <input required name="email" type="email" className={inputClass} placeholder={f.emailPh[lang]} />
                 </Field>
                 <Field label={f.country[lang]}>
-                  <input required type="text" className={inputClass} placeholder={f.countryPh[lang]} />
+                  <input required name="negara" type="text" className={inputClass} placeholder={f.countryPh[lang]} />
                 </Field>
               </div>
               <div className="mt-4">
                 <Field label={f.product[lang]}>
-                  <select className={inputClass} defaultValue="">
+                  <select name="produk" required className={inputClass} defaultValue="">
                     <option value="" disabled>
                       {f.productPh[lang]}
                     </option>
@@ -74,14 +96,24 @@ export function Contact() {
               </div>
               <div className="mt-4">
                 <Field label={f.message[lang]}>
-                  <textarea rows={4} className={`${inputClass} resize-none`} placeholder={f.messagePh[lang]} />
+                  <textarea name="pesan" rows={4} className={`${inputClass} resize-none`} placeholder={f.messagePh[lang]} />
                 </Field>
               </div>
+
+              {status === "error" && (
+                <p className="mt-4 text-sm text-red-600">
+                  {lang === "id"
+                    ? "Terjadi kesalahan saat mengirim. Silakan coba lagi."
+                    : "Something went wrong. Please try again."}
+                </p>
+              )}
+
               <button
                 type="submit"
-                className="mt-6 w-full bg-amber py-4 font-mono text-xs uppercase tracking-[0.15em] text-cream transition-opacity hover:opacity-90"
+                disabled={status === "sending"}
+                className="mt-6 w-full bg-amber py-4 font-mono text-xs uppercase tracking-[0.15em] text-cream transition-opacity hover:opacity-90 disabled:opacity-60"
               >
-                {t.contact.submit[lang]}
+                {status === "sending" ? (lang === "id" ? "Mengirim..." : "Sending...") : t.contact.submit[lang]}
               </button>
             </form>
           )}
