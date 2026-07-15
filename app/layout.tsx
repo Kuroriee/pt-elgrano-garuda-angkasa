@@ -49,10 +49,6 @@ export const metadata: Metadata = {
   authors: [{ name: 'PT Elgrano Garuda Angkasa' }],
   alternates: {
     canonical: SITE_URL,
-    languages: {
-      en: SITE_URL,
-      id: SITE_URL,
-    },
   },
   openGraph: {
     type: 'website',
