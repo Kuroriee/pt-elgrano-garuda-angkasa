@@ -119,12 +119,6 @@ export default function RootLayout({
     email: 'elgranogaruda@gmail.com',
     telephone: '+62-813-9604-1308',
     sameAs: [],
-    makesOffer: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Gayo Arabica Green Coffee Beans' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Mandheling Green Coffee Beans' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Lintong Green Coffee Beans' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Fine Robusta Coffee Beans' } },
-    ],
   }
 
   return (
