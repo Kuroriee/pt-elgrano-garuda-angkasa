@@ -5,6 +5,7 @@ const isStaticExport = target === 'github-pages' || target === 'static'
 
 const nextConfig = {
   output: isStaticExport ? 'export' : undefined,
+  trailingSlash: true,
   basePath: isGithubPages ? '/pt-elgrano-garuda-angkasa' : '',
   env: {
     NEXT_PUBLIC_BASE_PATH: isGithubPages ? '/pt-elgrano-garuda-angkasa' : '',
