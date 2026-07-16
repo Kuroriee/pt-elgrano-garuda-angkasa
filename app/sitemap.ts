@@ -10,5 +10,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 1,
     },
+    {
+      url: 'https://elgranogaruda.com/export-process/',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
   ]
 }

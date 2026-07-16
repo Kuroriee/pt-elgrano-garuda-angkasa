@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   title: 'Export Process & FAQ',
   description:
     'How to source specialty green coffee from PT Elgrano Garuda Angkasa — MOQs, sample requests, Incoterms, payment terms, certifications, and shipping documentation for international buyers.',
+  alternates: {
+    canonical: 'https://elgranogaruda.com/export-process/',
+  },
+  openGraph: {
+    url: 'https://elgranogaruda.com/export-process/',
+    title: 'Export Process & FAQ | PT Elgrano Garuda Angkasa',
+    description:
+      'How to source specialty green coffee from PT Elgrano Garuda Angkasa — MOQs, Incoterms, payment terms, and shipping documentation for international buyers.',
+  },
 }
 
 const steps = [
