@@ -40,7 +40,7 @@ export function SiteNav() {
         ))}
         <li>
           <a
-            href="#contact"
+            href={`${basePath}/#contact`}
             className="text-xs uppercase tracking-[0.12em] text-amber transition-opacity hover:opacity-80"
           >
             {t.nav.inquiry[lang]}
