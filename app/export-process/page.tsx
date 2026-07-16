@@ -1,3 +1,5 @@
+import { basePath } from '@/lib/base-path'
+import { SiteNav } from "@/components/site-nav"
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -96,11 +98,13 @@ const faqs = [
 
 export default function ExportProcessPage() {
   return (
-    <main className="mx-auto max-w-4xl px-6 py-16 md:px-12">
-      <header className="mb-16 text-center">
-        <h1 className="font-heading text-4xl font-semibold tracking-tight text-coffee md:text-5xl">
-          Export Process & FAQ
-        </h1>
+    <>
+      <SiteNav />
+      <main className="mx-auto max-w-4xl bg-background px-6 pb-16 pt-32 md:px-12">
+        <header className="mb-16 text-center">
+          <h1 className="font-heading text-4xl font-semibold tracking-tight text-coffee md:text-5xl">
+            Export Process & FAQ
+          </h1>
         <p className="mx-auto mt-4 max-w-2xl text-base text-coffee/70">
           Everything international buyers need to know about sourcing specialty
           green coffee from PT Elgrano Garuda Angkasa — from first inquiry to
@@ -154,12 +158,13 @@ export default function ExportProcessPage() {
           responds within two business days.
         </p>
         <a
-          href="mailto:elgranogaruda@gmail.com"
+          href={`${basePath}/#contact`}
           className="mt-4 inline-block rounded-full bg-amber-700 px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-amber-800"
         >
           Contact Our Export Team
         </a>
       </div>
     </main>
+    </>
   )
 }

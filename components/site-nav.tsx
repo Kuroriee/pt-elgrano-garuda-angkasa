@@ -8,10 +8,11 @@ export function SiteNav() {
   const { lang, toggle } = useLanguage()
 
   const links = [
-    { label: t.nav.story[lang], href: "#story" },
-    { label: t.nav.production[lang], href: "#process" },
-    { label: t.nav.products[lang], href: "#products" },
-    { label: t.nav.sustainability[lang], href: "#sustainability" },
+    { label: t.nav.story[lang], href: `${basePath}/#story` },
+    { label: t.nav.production[lang], href: `${basePath}/#process` },
+    { label: t.nav.products[lang], href: `${basePath}/#products` },
+    { label: t.nav.sustainability[lang], href: `${basePath}/#sustainability` },
+    { label: t.nav.exportFaq[lang], href: `${basePath}/export-process/` },
   ]
 
   return (

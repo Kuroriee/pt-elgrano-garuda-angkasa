@@ -12,6 +12,7 @@ export const translations = {
     production: { id: "Produksi", en: "Production" },
     products: { id: "Produk", en: "Products" },
     sustainability: { id: "Keberlanjutan", en: "Sustainability" },
+    exportFaq: { id: "Ekspor & FAQ", en: "Export & FAQ" },
     inquiry: { id: "Permintaan Ekspor", en: "Export Inquiry" },
     inquiryShort: { id: "Permintaan", en: "Inquiry" },
   },
