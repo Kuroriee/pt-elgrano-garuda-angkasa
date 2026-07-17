@@ -37,7 +37,7 @@ export function SiteNav() {
   return (
     <nav className="fixed inset-x-0 top-0 z-50 border-b border-amber/20 bg-cream/85 backdrop-blur-md">
       <div className="flex items-center justify-between px-6 py-4 md:px-12">
-        <a href="#top" className="flex items-center gap-2.5" onClick={() => setMenuOpen(false)}>
+        <a href={`${basePath}/#top`} className="flex items-center gap-2.5" onClick={() => setMenuOpen(false)}>
           <img
             src={`${basePath}/images/ega-mark.png`}
             alt="Lambang garuda PT Elgrano Garuda Angkasa"

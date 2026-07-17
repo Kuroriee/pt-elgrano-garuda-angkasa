@@ -21,13 +21,13 @@ export function SiteFooter() {
         © {new Date().getFullYear()} PT Elgrano Garuda Angkasa · {t.footer.rights[lang]}
       </p>
       <div className="flex gap-6">
-        <a href="#story" className="text-[0.7rem] tracking-[0.08em] text-cream/70 hover:text-amber">
+        <a href={`${basePath}/#story`} className="text-[0.7rem] tracking-[0.08em] text-cream/70 hover:text-amber">
           {t.footer.story[lang]}
         </a>
-        <a href="#products" className="text-[0.7rem] tracking-[0.08em] text-cream/70 hover:text-amber">
+        <a href={`${basePath}/#products`} className="text-[0.7rem] tracking-[0.08em] text-cream/70 hover:text-amber">
           {t.footer.products[lang]}
         </a>
-        <a href="#contact" className="text-[0.7rem] tracking-[0.08em] text-cream/70 hover:text-amber">
+        <a href={`${basePath}/#contact`} className="text-[0.7rem] tracking-[0.08em] text-cream/70 hover:text-amber">
           {t.footer.contact[lang]}
         </a>
       </div>
