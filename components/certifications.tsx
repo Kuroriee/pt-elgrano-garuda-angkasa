@@ -17,7 +17,7 @@ export function Certifications() {
           {certs.map((cert) => (
             <span
               key={cert}
-              className="flex items-center gap-2 bg-espresso px-5 py-3 font-mono text-[0.68rem] uppercase tracking-[0.1em] text-cream before:content-['✓']"
+              className="flex items-center gap-2 border border-espresso/25 bg-transparent px-5 py-3 font-mono text-[0.68rem] uppercase tracking-[0.1em] text-espresso before:content-['+']"
             >
               {cert}
             </span>
