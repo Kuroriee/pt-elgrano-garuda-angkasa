@@ -5,10 +5,10 @@ import { useLanguage, translations as t } from "@/lib/i18n"
 import { basePath } from "@/lib/base-path"
 
 const images = [
- { src: `${basePath}/images/product-aceh.png` },
- { src: `${basePath}/images/product-mandheling.png` },
- { src: `${basePath}/images/product-lintong.png` },
- { src: `${basePath}/images/product-robusta.png` },
+ { src: `${basePath}/images/product-aceh.jpg` },
+ { src: `${basePath}/images/product-mandheling.jpg` },
+ { src: `${basePath}/images/product-lintong.jpg` },
+ { src: `${basePath}/images/product-robusta.jpg` },
 ]
 
 export function Products() {
