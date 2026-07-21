@@ -1,16 +1,16 @@
 1:"$Sreact.fragment"
-2:I[73478,["/_next/static/chunks/0y~a7a5qi010m.js","/_next/static/chunks/0i4gx.xil6j--.js","/_next/static/chunks/15-gusq4yylp_.js"],"SiteNav"]
-3:I[85161,["/_next/static/chunks/0y~a7a5qi010m.js","/_next/static/chunks/0i4gx.xil6j--.js","/_next/static/chunks/15-gusq4yylp_.js"],"Hero"]
-4:I[88355,["/_next/static/chunks/0y~a7a5qi010m.js","/_next/static/chunks/0i4gx.xil6j--.js","/_next/static/chunks/15-gusq4yylp_.js"],"Ticker"]
-5:I[79266,["/_next/static/chunks/0y~a7a5qi010m.js","/_next/static/chunks/0i4gx.xil6j--.js","/_next/static/chunks/15-gusq4yylp_.js"],"Stats"]
-6:I[66141,["/_next/static/chunks/0y~a7a5qi010m.js","/_next/static/chunks/0i4gx.xil6j--.js","/_next/static/chunks/15-gusq4yylp_.js"],"Story"]
-7:I[89406,["/_next/static/chunks/0y~a7a5qi010m.js","/_next/static/chunks/0i4gx.xil6j--.js","/_next/static/chunks/15-gusq4yylp_.js"],"Process"]
-8:I[21490,["/_next/static/chunks/0y~a7a5qi010m.js","/_next/static/chunks/0i4gx.xil6j--.js","/_next/static/chunks/15-gusq4yylp_.js"],"Products"]
-9:I[91923,["/_next/static/chunks/0y~a7a5qi010m.js","/_next/static/chunks/0i4gx.xil6j--.js","/_next/static/chunks/15-gusq4yylp_.js"],"Certifications"]
-a:I[10766,["/_next/static/chunks/0y~a7a5qi010m.js","/_next/static/chunks/0i4gx.xil6j--.js","/_next/static/chunks/15-gusq4yylp_.js"],"Sustainability"]
-b:I[15751,["/_next/static/chunks/0y~a7a5qi010m.js","/_next/static/chunks/0i4gx.xil6j--.js","/_next/static/chunks/15-gusq4yylp_.js"],"Contact"]
-c:I[16200,["/_next/static/chunks/0y~a7a5qi010m.js","/_next/static/chunks/0i4gx.xil6j--.js","/_next/static/chunks/15-gusq4yylp_.js"],"SiteFooter"]
+2:I[73478,["/_next/static/chunks/0y~a7a5qi010m.js","/_next/static/chunks/0i4gx.xil6j--.js","/_next/static/chunks/17s3-.236cpll.js"],"SiteNav"]
+3:I[85161,["/_next/static/chunks/0y~a7a5qi010m.js","/_next/static/chunks/0i4gx.xil6j--.js","/_next/static/chunks/17s3-.236cpll.js"],"Hero"]
+4:I[88355,["/_next/static/chunks/0y~a7a5qi010m.js","/_next/static/chunks/0i4gx.xil6j--.js","/_next/static/chunks/17s3-.236cpll.js"],"Ticker"]
+5:I[79266,["/_next/static/chunks/0y~a7a5qi010m.js","/_next/static/chunks/0i4gx.xil6j--.js","/_next/static/chunks/17s3-.236cpll.js"],"Stats"]
+6:I[66141,["/_next/static/chunks/0y~a7a5qi010m.js","/_next/static/chunks/0i4gx.xil6j--.js","/_next/static/chunks/17s3-.236cpll.js"],"Story"]
+7:I[89406,["/_next/static/chunks/0y~a7a5qi010m.js","/_next/static/chunks/0i4gx.xil6j--.js","/_next/static/chunks/17s3-.236cpll.js"],"Process"]
+8:I[21490,["/_next/static/chunks/0y~a7a5qi010m.js","/_next/static/chunks/0i4gx.xil6j--.js","/_next/static/chunks/17s3-.236cpll.js"],"Products"]
+9:I[91923,["/_next/static/chunks/0y~a7a5qi010m.js","/_next/static/chunks/0i4gx.xil6j--.js","/_next/static/chunks/17s3-.236cpll.js"],"Certifications"]
+a:I[10766,["/_next/static/chunks/0y~a7a5qi010m.js","/_next/static/chunks/0i4gx.xil6j--.js","/_next/static/chunks/17s3-.236cpll.js"],"Sustainability"]
+b:I[15751,["/_next/static/chunks/0y~a7a5qi010m.js","/_next/static/chunks/0i4gx.xil6j--.js","/_next/static/chunks/17s3-.236cpll.js"],"Contact"]
+c:I[16200,["/_next/static/chunks/0y~a7a5qi010m.js","/_next/static/chunks/0i4gx.xil6j--.js","/_next/static/chunks/17s3-.236cpll.js"],"SiteFooter"]
 d:I[54439,["/_next/static/chunks/0y~a7a5qi010m.js","/_next/static/chunks/0i4gx.xil6j--.js"],"OutletBoundary"]
 e:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"overflow-x-hidden bg-background","children":[["$","h1",null,{"className":"sr-only","children":"PT Elgrano Garuda Angkasa — Specialty Sumatran Coffee Exporter"}],["$","$L2",null,{}],["$","$L3",null,{}],["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}],["$","$L7",null,{}],["$","$L8",null,{}],["$","$L9",null,{}],["$","$La",null,{}],["$","$Lb",null,{}],["$","$Lc",null,{}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/15-gusq4yylp_.js","async":true}]],["$","$Ld",null,{"children":["$","$e",null,{"name":"Next.MetadataOutlet","children":"$@f"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"o52Gh-xYqquCPf2O8qgCJ"}
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"overflow-x-hidden bg-background","children":[["$","h1",null,{"className":"sr-only","children":"PT Elgrano Garuda Angkasa — Specialty Sumatran Coffee Exporter"}],["$","$L2",null,{}],["$","$L3",null,{}],["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}],["$","$L7",null,{}],["$","$L8",null,{}],["$","$L9",null,{}],["$","$La",null,{}],["$","$Lb",null,{}],["$","$Lc",null,{}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/17s3-.236cpll.js","async":true}]],["$","$Ld",null,{"children":["$","$e",null,{"name":"Next.MetadataOutlet","children":"$@f"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"ntR5DE6LNUmLWP1S-gCCr"}
 f:null

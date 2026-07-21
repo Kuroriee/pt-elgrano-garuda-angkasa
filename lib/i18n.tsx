@@ -164,7 +164,7 @@ export const translations = {
         {
           origin: "Lintong, Sumatra Barat",
           name: "Lintong Green",
-          grade: "Green Spec",
+          grade: "Grade 1 Specialty",
           notes: "Green bean specialty mentah untuk craft roaster. Manis seimbang, asam stone-fruit, dan body berat yang halus.",
           profile:
             "Green bean specialty mentah yang dirancang untuk craft roaster yang ingin mengontrol penuh profil sangrai mereka. Berpotensi menghasilkan kemanisan seimbang, keasaman stone-fruit yang cerah, dan body berat namun halus saat disangrai dengan tepat.",
@@ -218,7 +218,7 @@ export const translations = {
         {
           origin: "Lintong, West Sumatra",
           name: "Lintong Green",
-          grade: "Green Spec",
+          grade: "Grade 1 Specialty",
           notes: "Unroasted specialty greens for craft roasters. Balanced sweetness, stone-fruit acidity, and a smooth heavy body.",
           profile:
             "Unroasted specialty greens designed for craft roasters who want full control of their roast profile. Capable of balanced sweetness, bright stone-fruit acidity, and a heavy yet smooth body when roasted with precision.",
