@@ -90,7 +90,7 @@ export const translations = {
     },
     p2: {
       id: "Selama lebih dari dua dekade, kami membangun hubungan langsung dengan petani kecil di Aceh, Tapanuli Utara, dan Sumatra Barat, menciptakan rantai pasok yang dapat dilacak dan menguntungkan setiap tangan yang menyentuhnya.",
-      en: "Over two decades, we've built direct relationships with smallholder farmers across Aceh, North Tapanuli, and West Sumatra, creating a traceable supply chain that benefits every hand it touches.",
+      en: "Over two decades, we've built direct relationships with smallholder farmers across Aceh, North Sumatra, and Mandailing Natal, South Tapanuli, creating a traceable supply chain that benefits every hand it touches.",
     },
     p3: {
       id: "Kini, kami memasok roaster specialty, importir, dan rumah dagang di Eropa, Amerika Utara, Asia-Pasifik, dan Timur Tengah — bukan sebagai pemasok komoditas, tetapi sebagai mitra produksi jangka panjang.",
@@ -203,14 +203,14 @@ export const translations = {
           tags: ["Wet-Hulled", "1,400m", "SCA 84+"],
         },
         {
-          origin: "North Tapanuli",
+          origin: "Mandailing Natal, South Tapanuli",
           name: "Mandheling",
           grade: "Grade 1",
           notes: "The Sumatra everyone pictures when they hear the word — heavy body, tobacco and dark cocoa, an earthiness that just sticks around.",
           profile:
             "If someone asks what \u201Cclassic Sumatran coffee\u201D tastes like, this is the answer. Mandheling is bold and full-bodied from the first sip, with tobacco and dark cocoa sitting at the center of the cup, backed by an earthy spice that's hard to mistake for anything else. Acidity is very low — almost nonexistent — which lets that heavy, lingering aftertaste do all the talking. It clings to the palate longer than most coffees, and that's exactly the point.",
           process:
-            "We source Mandheling from smallholder farms around North Tapanuli, at roughly 1,200 meters. Like Gayo, it goes through wet-hulling at high moisture — that's really the technique behind the low acidity and heavy body people associate with Sumatra. Every lot gets cupped before certification, holding at SCA 83+.",
+            "We source Mandheling from smallholder farms around Mandailing Natal, South Tapanuli, at roughly 1,200 meters. Like Gayo, it goes through wet-hulling at high moisture — that's really the technique behind the low acidity and heavy body people associate with Sumatra. Every lot gets cupped before certification, holding at SCA 83+.",
           brewing:
             "Immersion brewing brings out the best in Mandheling — French press, tubruk, anything that lets the body sit undisturbed. It's also a go-to for dark espresso blends that need extra depth.",
           tags: ["Wet-Hulled", "1,200m", "SCA 83+"],

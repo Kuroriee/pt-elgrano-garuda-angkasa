@@ -86,7 +86,7 @@ const faqs = [
   {
     question: 'Are your beans traceable to farm level?',
     answer:
-      'Yes. Each lot is traceable to the smallholder farmer group it was sourced from across Aceh, North Tapanuli, or West Sumatra, with GAP-certified production practices.',
+      'Yes. Each lot is traceable to the smallholder farmer group it was sourced from across Aceh, North Sumatra, or Mandailing Natal, South Tapanuli, with GAP-certified production practices.',
   },
   {
     question: 'What documents do you provide for customs clearance?',
