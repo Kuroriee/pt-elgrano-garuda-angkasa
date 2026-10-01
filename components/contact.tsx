@@ -4,7 +4,11 @@ import type React from "react"
 import { useState } from "react"
 import { useLanguage, translations as t } from "@/lib/i18n"
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/xbdnjvww"
+const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit"
+
+// Access key Web3Forms aman ditaruh di kode publik (hanya bisa mengirim ke email pemilik key).
+// Bisa lewat environment variable NEXT_PUBLIC_WEB3FORMS_KEY, atau langsung ganti teks di bawah.
+const WEB3FORMS_ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "bbabc5fb-de97-40fb-8d17-65f700f3c38b"
 
 export function Contact() {
   const { lang } = useLanguage()
@@ -19,14 +23,21 @@ export function Contact() {
     const form = e.currentTarget
     const data = new FormData(form)
 
+    // Pengaturan Web3Forms
+    data.append("access_key", WEB3FORMS_ACCESS_KEY)
+    data.append("subject", "New Export Inquiry - EGA Website")
+    data.append("from_name", "EGA Website")
+
     try {
-      const response = await fetch(FORMSPREE_ENDPOINT, {
+      const response = await fetch(WEB3FORMS_ENDPOINT, {
         method: "POST",
         body: data,
         headers: { Accept: "application/json" },
       })
 
-      if (response.ok) {
+      const result = await response.json()
+
+      if (response.ok && result.success) {
         setStatus("success")
         form.reset()
       } else {
@@ -66,6 +77,16 @@ export function Contact() {
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
+              {/* Honeypot anti-spam: disembunyikan dari manusia, bot biasanya mengisinya */}
+              <input
+                type="checkbox"
+                name="botcheck"
+                className="hidden"
+                style={{ display: "none" }}
+                tabIndex={-1}
+                autoComplete="off"
+              />
+
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <Field label={f.company[lang]}>
                   <input required name="perusahaan" type="text" className={inputClass} placeholder={f.companyPh[lang]} />
