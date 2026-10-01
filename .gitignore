@@ -14,3 +14,7 @@ node_modules
 .DS_Store
 out.zip
 build-log.txt
+
+out/
+out.zip
+build-log.txt
