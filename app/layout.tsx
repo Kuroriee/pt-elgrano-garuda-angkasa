@@ -23,6 +23,14 @@ const courierPrime = Courier_Prime({
 const SITE_URL = 'https://elgranogaruda.com'
 const OG_IMAGE = `${SITE_URL}/images/hero-coffee.png`
 
+// Isi dengan URL profil resmi yang aktif (LinkedIn, Instagram, Google Business
+// Profile, Algrano, Alibaba, dll). Jangan isi URL yang belum ada.
+// Contoh format: 'https://www.linkedin.com/company/nama-perusahaan'
+const SAME_AS: string[] = [
+  // 'https://www.linkedin.com/company/...',
+  // 'https://www.instagram.com/...',
+]
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -48,6 +56,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'PT Elgrano Garuda Angkasa' }],
   alternates: {
     canonical: SITE_URL,
+    types: {
+      'text/markdown': '/index.md',
+    },
   },
   openGraph: {
     type: 'website',
@@ -89,6 +100,15 @@ export const metadata: Metadata = {
   },
 }
 
+const ORG_ID = `${SITE_URL}/#organization`
+
+const PRODUCTS = [
+  { name: 'Gayo Arabica', origin: 'Aceh, Sumatra' },
+  { name: 'Mandheling', origin: 'North Tapanuli, Sumatra' },
+  { name: 'Lintong Green', origin: 'North Sumatra' },
+  { name: 'Fine Robusta', origin: 'Sumatra' },
+]
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -96,24 +116,62 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'PT Elgrano Garuda Angkasa',
-    url: SITE_URL,
-    logo: `${SITE_URL}/icon-ega.png`,
-    description:
-      'Specialty-grade Arabica and Robusta coffee exporter sourced from smallholder farmers in Sumatra, Indonesia, exporting to 30+ countries since 2004.',
-    foundingDate: '2004',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Jl. Bromo Ujung Gg. Sedar No. 9A, Binjai, Kec. Medan Denai',
-      addressLocality: 'Medan',
-      addressRegion: 'Sumatera Utara',
-      postalCode: '20228',
-      addressCountry: 'ID',
-    },
-    email: 'elgranogaruda@gmail.com',
-    telephone: '+62-813-9604-1308',
-    sameAs: [],
+    '@graph': [
+      {
+        '@type': 'Organization',
+        '@id': ORG_ID,
+        name: 'PT Elgrano Garuda Angkasa',
+        alternateName: 'EGA',
+        url: SITE_URL,
+        logo: `${SITE_URL}/icon-ega.png`,
+        description:
+          'Specialty-grade Arabica and Robusta coffee exporter sourced from smallholder farmers in Sumatra, Indonesia, exporting to 30+ countries since 2004.',
+        foundingDate: '2004',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Jl. Bromo Ujung Gg. Sedar No. 9A, Binjai, Kec. Medan Denai',
+          addressLocality: 'Medan',
+          addressRegion: 'Sumatera Utara',
+          postalCode: '20228',
+          addressCountry: 'ID',
+        },
+        email: 'elgranogaruda@gmail.com',
+        telephone: '+62-813-9604-1308',
+        contactPoint: {
+          '@type': 'ContactPoint',
+          contactType: 'sales',
+          email: 'elgranogaruda@gmail.com',
+          telephone: '+62-813-9604-1308',
+          availableLanguage: ['English', 'Indonesian'],
+        },
+        ...(SAME_AS.length > 0 ? { sameAs: SAME_AS } : {}),
+      },
+      {
+        '@type': 'WebSite',
+        '@id': `${SITE_URL}/#website`,
+        url: SITE_URL,
+        name: 'PT Elgrano Garuda Angkasa',
+        inLanguage: ['en', 'id'],
+        publisher: { '@id': ORG_ID },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${SITE_URL}/#products`,
+        name: 'Sumatran green coffee origins',
+        itemListElement: PRODUCTS.map((p, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          item: {
+            '@type': 'Product',
+            name: `${p.name} Green Coffee`,
+            category: 'Green coffee beans',
+            brand: { '@id': ORG_ID },
+            countryOfOrigin: { '@type': 'Country', name: 'Indonesia' },
+            description: `${p.name} green coffee from ${p.origin}, exported by PT Elgrano Garuda Angkasa.`,
+          },
+        })),
+      },
+    ],
   }
 
   return (

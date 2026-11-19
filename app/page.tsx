@@ -13,7 +13,7 @@ import { SiteFooter } from "@/components/site-footer"
 export default function Page() {
   return (
     <main className="overflow-x-hidden bg-background">
-      <h1 className="sr-only">PT Elgrano Garuda Angkasa — Specialty Sumatran Coffee Exporter</h1>
+      <p className="sr-only">PT Elgrano Garuda Angkasa — Specialty Sumatran Coffee Exporter</p>
       <SiteNav />
       <Hero />
       <Ticker />
