@@ -18,3 +18,5 @@ build-log.txt
 out/
 out.zip
 build-log.txt
+
+*.tsbuildinfo
