@@ -5,9 +5,8 @@
   RewriteRule ^$ /index.md [L]
 </IfModule>
 
-AddDefaultCharset UTF-8
-AddType "text/markdown; charset=UTF-8" .md
-AddType "text/plain; charset=UTF-8" .txt
+AddType text/markdown .md
+AddType text/plain .txt
 
 # Mark the homepage request
 <IfModule mod_setenvif.c>
