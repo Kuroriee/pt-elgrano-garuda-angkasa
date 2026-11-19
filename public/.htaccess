@@ -5,6 +5,7 @@
   RewriteRule ^$ /index.md [L]
 </IfModule>
 
+AddDefaultCharset UTF-8
 AddType "text/markdown; charset=UTF-8" .md
 AddType "text/plain; charset=UTF-8" .txt
 
@@ -13,8 +14,8 @@ AddType "text/plain; charset=UTF-8" .txt
   SetEnvIf Request_URI "^/(index\.html)?$" IS_HOME=1
 </IfModule>
 
-# RFC 8288 Link header + Vary on the homepage
+# RFC 8288 Link header + Vary on the homepage (no inner quotes on purpose)
 <IfModule mod_headers.c>
-  Header set Link "</llms.txt>; rel=\"describedby\"; type=\"text/plain\", </index.md>; rel=\"alternate\"; type=\"text/markdown\"" env=IS_HOME
+  Header set Link "</llms.txt>; rel=describedby, </index.md>; rel=alternate" env=IS_HOME
   Header append Vary Accept env=IS_HOME
 </IfModule>
